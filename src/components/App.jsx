@@ -22,10 +22,12 @@ handleChange = e => {
 
 
 handleSubmit =  ({ name, number }) => {
-  const loweredName = name.toLowerCase();
-
+  const includesName = name.toLowerCase();
+  
+  
   this.state.contacts.find(
-    contact => contact.name.toLowerCase() === loweredName
+    contact => contact.name.toLowerCase() === includesName 
+    
   )
     ? alert(`${name} is already in contacts`)
     : this.setState(({ contacts }) => ({
